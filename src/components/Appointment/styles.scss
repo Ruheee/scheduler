@@ -109,6 +109,7 @@ $appointment-height: 11rem;
 
   &__actions {
     margin-top: 1rem;
+    display: flex;
 
     &-button {
       @include button-inactive--opacity;
