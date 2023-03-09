@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { getAppointmentsForDay } from "helpers/selectors";
+import { getAppointmentsForDay, getInterview } from "helpers/selectors";
 
 import axios from "axios";
 import DayList from "./DaysList" 
@@ -30,7 +30,6 @@ export default function Application(props) {
     ])
     .then((response) => {
       setState(prev => ({...prev, days:response[0].data, appointments: response[1].data, interviewers: response[2].data}));
-      
   })
   }, []);
   
