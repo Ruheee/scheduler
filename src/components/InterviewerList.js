@@ -9,7 +9,6 @@ import "components/InterviewList.scss"
 
 export default function InterviewList(props) {
   const interviewers = props.interviewers
-
   const interviewerItem = interviewers.map(interviewer =>
 
     <InterviewListItem
