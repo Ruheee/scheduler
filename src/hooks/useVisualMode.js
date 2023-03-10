@@ -4,7 +4,13 @@ export default function useVisualMode(initialMode) {
   const [mode, setMode] = useState(initialMode);
   const [history, setHistory] = useState([initialMode]);
 
-  const transition = (newMode) => {
+  const transition = (newMode, replace = false) => {
+    if (replace) {
+      setHistory([...history.slice(0, history.length - 1), newMode]);
+      setMode(newMode);
+      return;
+    }
+    
     setMode(newMode);
     setHistory([...history, newMode]);
   };
@@ -13,6 +19,7 @@ export default function useVisualMode(initialMode) {
     if (history.length > 1) {
       const newHistory = [...history];
       newHistory.pop();
+
       setHistory(newHistory);
       setMode(newHistory[newHistory.length - 1]);
     }
