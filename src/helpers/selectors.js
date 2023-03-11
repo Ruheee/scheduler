@@ -11,7 +11,7 @@ export function getAppointmentsForDay(state, day) {
 
   return foundDayAppointments;
 }
-
+// get interview for that selected day
 export function getInterviewersForDay(state, day) {
   //... returns an array of Interviewers for that day
 
@@ -36,7 +36,9 @@ export function getInterview(state, interview) {
   }
   
   let interviewer = interview.interviewer;
+  
   if (state.interviewers[interviewer].id === interviewer) {
+
     obj["student"] = interview.student;
     obj["interviewer"] = state.interviewers[interviewer];
   }
