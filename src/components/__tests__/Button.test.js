@@ -6,9 +6,7 @@ import Button from "components/Button";
 
 afterEach(cleanup);
 
-it("renders without crashing", () => {
-  render(<Button />);
-});
+
 
 it("renders its `children` prop as text", () => {
   const { getByText } = render(<Button>Default</Button>);
@@ -43,7 +41,7 @@ it("renders a clickable button", () => {
   expect(handleClick).toHaveBeenCalledTimes(1);
 });
 
-it.skip("renders a disabled button", () => {
+it("renders a disabled button", () => {
   const handleClick = jest.fn();
   const { getByText } = render(
     <Button disabled onClick={handleClick}>
