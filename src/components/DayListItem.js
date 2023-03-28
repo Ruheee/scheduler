@@ -22,7 +22,7 @@ export default function DayListItem(props) {
     return <h3 className="text--light">{props.spots} spots remaining</h3>
   }
 
-  let dayClass = classNames("li", {
+  let dayClass = classNames("day-list__item", {
     "day-list__item": props,
     "day-list__item--selected": props.selected,
     "day-list__item--full": props.spots === 0
